@@ -54,7 +54,6 @@ def transform_texte(texte):
 
 def autocorrector():
     transform_texte(config.ctrlc)
-    time.sleep(2)
     pyautogui.hotkey('ctrl', 'a')
     pyautogui.hotkey('ctrl', 'c')
     pyautogui.press('backspace')
