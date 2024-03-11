@@ -36,7 +36,7 @@ headers = {
 }
 
 class config:
-  ctrlc = ""
+    ctrlc = ""
 
 def transform_texte(texte):
     texte_transform = ""
@@ -53,25 +53,30 @@ def transform_texte(texte):
 
 
 def autocorrector():
-  transform_texte(config.ctrlc)
-  time.sleep(2)
-  global ctrlc
-  pyautogui.hotkey('ctrl', 'c')
-  config.ctrlc = pyperclip.paste()
-  data = f'D1=Option+sortie+audio&xscreen=1920&yscreen=1080&question=Tu+dois+juste+donner+la+r^%^C3^%^A9ponse^%^2C+corrige+les+fautes+{config.ctrlc}'
-  response = requests.post('https://ile-reunion.org/gpt3/resultat', cookies=cookies, headers=headers, data=data)
-  # Analyser le contenu de la réponse avec BeautifulSoup
-  soup = BeautifulSoup(response.text, 'html.parser')
-  # Trouver l'élément contenant le texte souhaité
-  resultat_div = soup.find('div', class_='affichage')
-  # Extraire le texte à partir de cet élément
-  texte = resultat_div.get_text(strip=True)
-  # Retirer les parties indésirables du texte
-  texte = texte.replace('Résultat : gpt-3.5-turbo', '')
-  texte = re.sub(r'Posez une autre question.*', '', texte)
-  # Imprimer le texte extrait
-  print(texte)
-  pyperclip.copy(texte)
-  pyautogui.hotkey('ctrl', 'v')
+    transform_texte(config.ctrlc)
+    time.sleep(2)
+    pyautogui.hotkey('ctrl', 'a')
+    pyautogui.hotkey('ctrl', 'c')
+    pyautogui.press('backspace')
+    pyautogui.write("Correction en cours...")
+    config.ctrlc = pyperclip.paste()
+    data = f'D1=Option+sortie+audio&xscreen=1920&yscreen=1080&question=Tu+dois+juste+donner+la+r^%^C3^%^A9ponse^%^2C+corrige+les+fautes+{config.ctrlc}'
+    response = requests.post('https://ile-reunion.org/gpt3/resultat', cookies=cookies, headers=headers, data=data)
+    # Analyser le contenu de la réponse avec BeautifulSoup
+    soup = BeautifulSoup(response.text, 'html.parser')
+    # Trouver l'élément contenant le texte souhaité
+    resultat_div = soup.find('div', class_='affichage')
+    # Extraire le texte à partir de cet élément
+    texte = resultat_div.get_text(strip=True)
+    # Retirer les parties indésirables du texte
+    texte = texte.replace('Résultat : gpt-3.5-turbo', '')
+    texte = re.sub(r'Posez une autre question.*', '', texte)
+    # Imprimer le texte extrait
+    print(texte)
+    pyautogui.hotkey('ctrl', 'a')
+    pyautogui.hotkey('ctrl', 'c')
+    pyautogui.press('backspace')
+    pyperclip.copy(texte)
+    pyautogui.hotkey('ctrl', 'v')
 
 autocorrector()
