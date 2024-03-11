@@ -54,10 +54,8 @@ def transform_texte(texte):
 
 def autocorrector():
     transform_texte(config.ctrlc)
-    pyautogui.hotkey('ctrl', 'a')
     pyautogui.hotkey('ctrl', 'c')
     pyautogui.press('backspace')
-    pyautogui.write("Correction en cours...")
     config.ctrlc = pyperclip.paste()
     data = f'D1=Option+sortie+audio&xscreen=1920&yscreen=1080&question=Tu+dois+juste+donner+la+r^%^C3^%^A9ponse^%^2C+corrige+les+fautes+{config.ctrlc}'
     response = requests.post('https://ile-reunion.org/gpt3/resultat', cookies=cookies, headers=headers, data=data)
@@ -72,9 +70,6 @@ def autocorrector():
     texte = re.sub(r'Posez une autre question.*', '', texte)
     # Imprimer le texte extrait
     print(texte)
-    pyautogui.hotkey('ctrl', 'a')
-    pyautogui.hotkey('ctrl', 'c')
-    pyautogui.press('backspace')
     pyperclip.copy(texte)
     pyautogui.hotkey('ctrl', 'v')
 
