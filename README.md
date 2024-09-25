@@ -15,7 +15,10 @@ Vous pouvez les installer en utilisant `pip` :
 ```sh
 pip install pyautogui pyperclip ollama
 ```
-
+Et vous devez aussi installer `llama3.1` :
+```sh
+ollama run llama3.1
+```
 ## Utilisation
 
 1. **Copiez le texte** que vous souhaitez corriger.
