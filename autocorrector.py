@@ -8,7 +8,7 @@ def autocorrector():
     text = pyperclip.paste()
     text = text.replace("'", "\\'")
     try:
-        response = ollama.chat(model='llama3.1', messages=[
+        response = ollama.chat(model='llama3.2', messages=[
             {
                 'role': 'user',
                 'content': "Corrige uniquement les fautes d'orthographe, de grammaire et de ponctuation dans le texte ci-dessous sans ajouter de commentaires ni d'autres modifications :" + text,
