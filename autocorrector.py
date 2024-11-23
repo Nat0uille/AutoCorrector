@@ -14,7 +14,7 @@ def autocorrector():
         response = ollama.chat(model='llama3.2', messages=[
             {
                 'role': 'user',
-                'content': f"Corrige uniquement les fautes d'orthographe, de grammaire et de ponctuation dans le texte ci-dessous sans ajouter de commentaires ni d'autres modifications : {text}",
+                'content': f"Corrige les fautes d'orthographe, de grammaire et de ponctuation dans le texte d'après sans rien ajouter de commentaires ni d'autres modifications : {text}",
             },
         ])
         if 'message' in response and 'content' in response['message']:
