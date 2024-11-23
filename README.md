@@ -9,11 +9,12 @@ Avant de pouvoir utiliser ce script, assurez-vous d'avoir installé les biblioth
 - `pyautogui`
 - `pyperclip`
 - `ollama`
+- `win10toast`
 
 Vous pouvez les installer en utilisant `pip` :
 
 ```sh
-pip install pyautogui pyperclip ollama
+pip install pyautogui pyperclip ollama win10toast
 ```
 Et vous devez aussi installer `llama3.2` :
 ```sh
@@ -37,7 +38,7 @@ ollama run llama3.2
 
 - Assurez-vous d'avoir `ollama` sur votre ordinateur et de lancé avec le model `llama3.2`.
 - Personnellement je l'utilise avec mon streamdeck avec [Auto PY to EXE](https://pypi.org/project/auto-py-to-exe/)
-- Ce script est conçu pour fonctionner sous Windows avec les raccourcis clavier `ctrl + c` et `ctrl + v`. Vous devrez peut-être ajuster les raccourcis si vous utilisez un autre système d'exploitation.
+- Ce script est conçu pour fonctionner sous Windows 11 avec les raccourcis clavier `ctrl + c` et `ctrl + v`. Vous devrez peut-être ajuster les raccourcis si vous utilisez un autre système d'exploitation.
 
 ## Licence
 
