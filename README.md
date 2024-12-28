@@ -10,11 +10,14 @@ Avant de pouvoir utiliser ce script, assurez-vous d'avoir installé les biblioth
 - `pyperclip`
 - `ollama`
 - `win10toast`
+- `pystray`
+- `PIL` (Pillow)
+- `keyboard`
 
 Vous pouvez les installer en utilisant `pip` :
 
 ```sh
-pip install pyautogui pyperclip ollama win10toast
+pip install pyautogui pyperclip ollama win10toast pystray pillow keyboard
 ```
 Et vous devez aussi installer `llama3.2` :
 ```sh
@@ -22,22 +25,12 @@ ollama run llama3.2
 ```
 ## Utilisation
 
-1. **Copiez le texte** que vous souhaitez corriger.
-2. **Exécutez le script** `autocorrector.py`.
-3. Le texte corrigé sera automatiquement collé à l'emplacement d'origine.
-
-## Fonctionnement
-
-1. Le script utilise `pyautogui` pour copier le texte sélectionné (avec `ctrl + c`).
-2. Le texte copié est récupéré à l'aide de `pyperclip`.
-3. Le texte est envoyé à l'API `ollama` pour correction.
-4. Le texte corrigé est récupéré et copié dans le presse-papier.
-5. Le texte corrigé est collé à l'emplacement d'origine (avec `ctrl + v`).
+1. **Lancer le fichier python** (si vous voulez ne pas avoir le terminal d'affiché, changer .pyw à la place de .py)
+2. **Appuyer sur la touche défini** (F23 de base)
 
 ## Remarques
 
 - Assurez-vous d'avoir `ollama` sur votre ordinateur et de lancé avec le model `llama3.2`.
-- Personnellement je l'utilise avec mon streamdeck avec [Auto PY to EXE](https://pypi.org/project/auto-py-to-exe/)
 - Ce script est conçu pour fonctionner sous Windows 11 avec les raccourcis clavier `ctrl + c` et `ctrl + v`. Vous devrez peut-être ajuster les raccourcis si vous utilisez un autre système d'exploitation.
 
 ## Licence
