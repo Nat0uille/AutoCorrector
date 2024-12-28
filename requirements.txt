@@ -1,0 +1,7 @@
+pyautogui
+pyperclip
+ollama
+win10toast
+pystray
+pillow
+keyboard
