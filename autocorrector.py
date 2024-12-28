@@ -71,4 +71,4 @@ if __name__ == "__main__":
     keyboard.add_hotkey('F23', autocorrector)
     
     while running:
-        pass
+        keyboard.wait('F23')
