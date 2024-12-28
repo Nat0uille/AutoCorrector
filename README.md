@@ -28,6 +28,10 @@ ollama run llama3.2
 1. **Lancer le fichier python** (si vous voulez ne pas avoir le terminal d'affiché, changer .pyw à la place de .py)
 2. **Appuyer sur la touche défini** (F23 de base)
 
+## Lancement au démarrage (sur windows)
+Faite **win + r** puis **shell:startup**
+Selectionner le fichier **autocorrector.py** puis faite un clique droit et glisser le dans le dossier **Démarrage**, puis **Créer les raccourcis ici**
+
 ## Remarques
 
 - Assurez-vous d'avoir `ollama` sur votre ordinateur et de lancé avec le model `llama3.2`.
